@@ -1,0 +1,4 @@
+[MASTER]
+
+# Ignore files in the following directories
+ignore-path = scripts/
