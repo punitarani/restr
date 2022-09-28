@@ -13,7 +13,7 @@ Development
 
 **Clone the repository**:
 
-``git clone git://github.com/punitarani/restr.git``
+``git clone https://github.com/punitarani/restr.git``
 
 
 **Install the dependencies**:
