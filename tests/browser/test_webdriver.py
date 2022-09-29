@@ -10,7 +10,7 @@ from pathlib import Path
 from restr.browser.webdriver import WebDriver, wdm_log_path
 
 
-@pytest.mark.order(2)
+@pytest.mark.order(1)
 class TestWebDriver:
     """Test WebDriver"""
 
