@@ -15,8 +15,15 @@ def pytest_configure(config):
 
 
 @pytest.hookimpl(tryfirst=True)
-def pytest_collection_modifyitems(session, config, items):
-    """Modify test collection and items"""
+def pytest_collection_modifyitems(items):
+    """
+    Modify test collection and items
+
+    Parameters
+    ----------
+    items : list
+        List of test items
+    """
 
     # Sort tests by order marker within same folder
     # Get folders (tests/folder/) and respective tests
@@ -47,4 +54,4 @@ def pytest_collection_modifyitems(session, config, items):
         folders[folder] = mod_vals
 
     # Replace items with sorted tests
-    items[:] = [item for folder in folders for item in folders[folder]]
+    items[:] = [item for values in folders.values() for item in values]
