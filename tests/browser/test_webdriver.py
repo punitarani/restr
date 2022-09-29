@@ -4,8 +4,9 @@ tests.browser.test_webdriver.py
 Filename does not have a test prefix as it is meant to be run in test_browser.py not standalone.
 """
 
-import pytest
 from pathlib import Path
+
+import pytest
 
 from restr.browser.webdriver import WebDriver, wdm_log_path
 
