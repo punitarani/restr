@@ -48,8 +48,3 @@ def pytest_collection_modifyitems(session, config, items):
 
     # Replace items with sorted tests
     items[:] = [item for folder in folders for item in folders[folder]]
-
-    # Print test order
-    print("Test Order:")
-    for item in items:
-        print(item)
