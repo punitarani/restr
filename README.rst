@@ -1,15 +1,16 @@
+*****
 restr
-=====
+*****
 
 
 About
------
+#####
 
 *restr* is a RESTful Web Application Mapping, Testing and Fuzzing Tool.
 
 
 Development
------------
+###########
 
 **Clone the repository**:
 
