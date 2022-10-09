@@ -2,7 +2,7 @@
 
 import pytest
 
-from restr.browser import Browser
+from restr.browser import Browser, Options
 
 # Cache browser
 __BROWSER = None
@@ -18,9 +18,12 @@ def browser():
 
     # Create and cache browser
     if not __BROWSER or __BROWSER.browser.service.process is None:
-        __BROWSER = Browser(headless=True)
+        # Define Firefox Options
+        options = Options()
+        options.headless = True
 
-        # Wait 3s for browser to open
+        # Create browser and wait 3s to open
+        __BROWSER = Browser(options=options)
         __BROWSER.browser.implicitly_wait(3)
 
     return __BROWSER

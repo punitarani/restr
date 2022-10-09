@@ -1,3 +1,3 @@
 """restr.browser"""
 
-from .browser import Browser
+from .browser import Browser, Options

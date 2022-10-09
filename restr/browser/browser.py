@@ -5,7 +5,7 @@ Browser Class File
 Handles browser window and tab instances
 """
 
-from selenium.webdriver import Firefox, FirefoxOptions
+from selenium.webdriver import Firefox, FirefoxOptions as Options
 
 from restr.browser.webdriver import WebDriver
 from restr.browser.window import Window
@@ -17,18 +17,18 @@ class Browser(BrowserBase):
     Browser Class
     """
 
-    def __init__(self, *args, headless: bool = False, **kwargs) -> None:
+    def __init__(self, *args, options: Options = None, **kwargs) -> None:
         """
         Constructor
 
         Parameters
         ----------
-        headless : bool, optional
-            Run browser in headless mode, by default False
+        options : Options, optional
+            Firefox Options, by default None
 
         Notes
         -----
-        This method will open a new browser window with a blank page.
+        A new browser window with a blank page will be opened automatically after initialization.
         """
 
         super().__init__(*args, **kwargs)
@@ -37,8 +37,7 @@ class Browser(BrowserBase):
         self.driver: WebDriver = WebDriver()
 
         # Define browser options
-        self.options = FirefoxOptions()
-        self.options.headless = headless
+        self.options = options if options else Options()
         self.options.add_argument("--disable-blink-features=AutomationControlled")
 
         # Set User Agent to Firefox
